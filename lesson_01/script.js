@@ -1,1 +1,3 @@
-alert(prompt("Hello, Alex! How are you?", ""));
+let foo = prompt("What's your name?", "");
+
+alert(`Hello, ${foo} How are you?`);
