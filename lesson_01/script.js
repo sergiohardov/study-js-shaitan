@@ -1,0 +1,1 @@
+alert(prompt("Hello, Alex! How are you?", ""));
