@@ -6,9 +6,9 @@ function hoursInSeconds(h) {
   return h * 60 * 60;
 }
 
-alert(`In ${hours} hour(s) - ${hoursInSeconds(hours)} seconds`);
+const result = hoursInSeconds(hours);
 
-
+alert(`In ${hours} hour(s) - ${result} seconds`);
 
 // Альтернативное решение с учетом того что пользователь ввел не число:
 
@@ -22,4 +22,6 @@ function hoursInSecondsAlt(h) {
   }
 }
 
-alert(hoursInSecondsAlt(hoursAlt));
+const resultAlt = hoursInSecondsAlt(hoursAlt);
+
+alert(resultAlt);
