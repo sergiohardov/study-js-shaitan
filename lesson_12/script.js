@@ -1,22 +1,24 @@
 "use strict";
 
-/*
-    Не совсем понял в каком случае: в самом начале или уже в конечном сообщении: "Если в каком-то из случаев он не захочет вводить информацию и нажмет Отмена, показать ему сообщение..." - сделал в конце, но при другом условии понимаю что можно после промпта написать условие на проверку null и вывести соответствующий alert
-
-*/
-const age = prompt("Введите год своего рождения:");
-const city = prompt("Введите город в котором вы живете:");
-const sport = prompt("Ваш любимый вид спорта:");
-
 let message = null;
 
-if (!isNaN(+age) && age != "" && age != null) {
-  message = `Твой возраст: ${new Date().getFullYear() - age}`;
+// Узнаем год
+const year = prompt("Введите год своего рождения:");
+
+if (year == null || isNaN(+year) || year.trim() == "") {
+  alert("Жаль, что Вы не захотели ввести свой год рождения");
+  message = `Твой возраст: Не указан`;
 } else {
-  message = `Жаль, что Вы не захотели ввести свой возраст`;
+  message = `Твой возраст: ${new Date().getFullYear() - year}`;
 }
 
-if (city != "" && city != null) {
+// Узнаем город
+const city = prompt("Введите город в котором вы живете:");
+
+if (city == null || !isNaN(+city) || city.trim() == "") {
+  alert("Жаль, что Вы не захотели ввести свой город");
+  message += `\nТвой город: Не указан`;
+} else {
   switch (city.toLowerCase()) {
     case "киев":
       message += "\nТы живешь в столице: Украины";
@@ -31,11 +33,15 @@ if (city != "" && city != null) {
       message += `\nТы живешь в городе: ${city}`;
       break;
   }
-} else {
-  message += `\nЖаль, что Вы не захотели ввести свой город`;
 }
 
-if (sport != "" && sport != null) {
+// Узнаем спорт
+const sport = prompt("Ваш любимый вид спорта:");
+
+if (sport == null || !isNaN(+sport) || sport.trim() == "") {
+  alert("Жаль, что Вы не захотели ввести свой любимый вид спорта");
+  message += `\nТвой спорт: Не указан`;
+} else {
   switch (sport.toLowerCase()) {
     case "футбол":
       message += "\nКруто! Хочешь стать Лионелем Месси";
@@ -50,8 +56,6 @@ if (sport != "" && sport != null) {
       message += `\nТвой любимый вид спорта: ${sport}`;
       break;
   }
-} else {
-  message += `\nЖаль, что Вы не захотели ввести свой вид спорта`;
 }
 
 alert(message);
