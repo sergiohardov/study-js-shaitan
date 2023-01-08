@@ -1,0 +1,36 @@
+.header {
+  padding: 40px 0;
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__logo {
+    display: flex;
+    img {
+      height: 45px;
+      width: auto;
+    }
+  }
+  &__navigation {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li:not(:last-child) {
+      margin-right: 40px;
+    }
+    i {
+      margin-left: 10px;
+    }
+  }
+  &__buttons {
+    a:not(:last-child) {
+      margin-right: 24px;
+    }
+    .btn {
+      padding: 12px 20px;
+    }
+  }
+}
